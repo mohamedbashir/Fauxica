@@ -1,2 +1,2 @@
 # Fauxica
-## Simple website using HTML&CSS
+Simple website using HTML&CSS
