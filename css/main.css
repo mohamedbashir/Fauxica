@@ -32,7 +32,7 @@ nav ul a {
     color: black;
     text-transform: uppercase;
     font-size: 1.6rem; /* rem for font size , Other things use em 
-    , rem does not effect from parent if the element is nested . ده اللي انا فهمته
+    , rem does not effect from parent . ده اللي انا فهمته
     */
     position: relative;
 
@@ -43,7 +43,178 @@ nav ul a.active:before{
     content: "";
     border-bottom: 2px solid black;
     width: 35%;
-    bottom: -5px;
+    bottom: -6px;
     height: 1px;
+}
 
+nav ul li a:before{
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid rgb(158, 157, 157);
+    width: 0;
+    bottom: -6px;
+    height: 1px;
+    transition: width 0.3s;
+}
+
+/* Main Section */
+
+main {
+    display: flex;
+    gap :8em;
+    margin-top: 11em;
+}
+
+.left-col {
+    width: 45%;
+}
+
+.right-col{
+    flex-grow: 1;
+}
+
+main .left-col h1 {
+    font-size:5.2rem ;
+    font-family: 'Playfair Display';
+    font-weight: normal;
+    margin: 0;
+}
+
+main .left-col .subhead{
+    font-size: 1.8rem;
+}
+
+main .left-col .cta-btns {
+    margin: 5em 0;
+}
+main .left-col .cta-btns , .secondary-cta {
+    display: flex ;
+    gap:2em;
+}
+.primary-cta{
+    background-color:#F1E2D1 ;
+    font-size: 1.8rem;
+    font-weight: bold; 
+    color: black;
+    text-decoration: none;
+    border-radius: 1.9em;
+    padding: 1em 2em;
+}
+.secondary-cta {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: black; 
+    display: block;/* Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width */
+    padding:  1em 0;
+}
+
+.secondary-cta svg {
+    width: 20px;
+}
+
+.news{
+    display: flex;
+    gap:3em;
+    padding: 5em;
+    border: 1px solid black;
+    border-radius: 0.8em;
+    position: relative;
+}
+
+.news:before{
+    position: absolute;
+    content: "";
+    background: url('../images/confetti.svg');
+    width: 100px;
+    height: 100px;
+    top: -20px;
+    left: -20px;
+    z-index: 2;
+}
+
+.news .employees{
+    line-height: 1; /* Ref  => https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align */
+    font-size: 3.3rem;
+    margin: 0;
+    font-weight: 200;
+}
+
+.news .details{
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+/* Right column gallery */
+
+.right-col {
+    display: grid;
+    gap: 2.3em;
+    grid-template-columns: repeat(2,auto); /* => auto auto and this mean (auto) => same width */
+    grid-template-areas: 
+    "left ."
+    "left ."
+    ;
+}
+
+.card{
+    border-radius: 0.8em;
+    padding: 1.1em;
+    display: flex;
+    align-items: end;
+    background-size: 150%;
+}
+
+.card1{
+    grid-area: left;
+    background-image: url("../images/clothing1.jpg");
+    position: relative;
+}
+
+.card1:before{
+    position:absolute;
+    content: "";
+    background: url("../images/tag.svg") no-repeat ;
+    width: 100%;
+    height: 100%;
+    top: 20px;
+    left: -30px;
+    pointer-events: none;
+}
+
+.card2{
+    background-image: url("../images/clothing2.jpg");
+}
+.card3{
+    background-image: url("../images/clothing3.jpg");
+}
+
+.card-details{
+    background: white;
+    border-radius: 0.6em;
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-details a {
+    color: black;
+    font-size: 1.6rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+.card-details b{
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.card-details .product-price{
+    font-size: 1.8rem;
+}
+
+/* Microinteractions */
+
+nav ul li a:hover:before{    
+    width: 35%;
 }
